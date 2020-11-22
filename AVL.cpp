@@ -169,15 +169,15 @@
     }
     void AVL::rotateRight(Node*& node){
         Node* temp = node->leftChild;
-        node->leftChild = node->rightChild;
-        temp->rightChild = node;
-        node = temp;
-        //delete temp;
+	    node->leftChild = temp->rightChild;
+	    temp->rightChild = node;
+	    node = temp;
+        
     }
     void AVL::rotateLeft(Node*& node){
         Node* temp = node->rightChild;
-        node->rightChild = node->leftChild;
-        temp->leftChild = node;
-        node = temp;
-        //delete temp;
+	    node->rightChild = temp->leftChild;
+	    temp->leftChild = node;
+	    node = temp;
+        
     }

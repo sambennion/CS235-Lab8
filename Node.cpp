@@ -52,6 +52,6 @@
 		    left = 0;
         }
 
-        cout << "Right: " << right << " - Left: " << left << " = " << right-left << endl;
+        //cout << "Right: " << right << " - Left: " << left << " = " << right-left << endl;
 		return right - left;
 	}
