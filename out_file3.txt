@@ -1,0 +1,195 @@
+Clear
+PrintBST
+BST is empty
+
+Add 1 True
+Add 2 True
+Add 3 True
+Add 4 True
+Add 5 True
+Add 6 True
+Add 7 True
+Add 8 True
+Add 9 True
+Add 10 True
+Add 11 True
+Add 12 True
+Add 13 True
+Add 14 True
+Add 15 True
+Add 16 True
+Add 17 True
+Add 18 True
+Add 19 True
+Add 20 True
+PrintBST
+0:  8 
+1:  4 16 
+2:  2 2 12 18 
+3:  1 1 1 1 10 10 17 19 
+4:  9 9 9 9 20 
+
+Remove 8 True
+PrintBST
+0:  1 
+1:  4 16 
+2:  2 2 12 18 
+3:  1 1 10 10 17 19 
+4:  9 9 9 9 20 
+
+Remove 7 False
+PrintBST
+0:  1 
+1:  4 16 
+2:  2 2 12 18 
+3:  1 1 10 10 17 19 
+4:  9 9 9 9 20 
+
+Remove 6 False
+PrintBST
+0:  1 
+1:  4 16 
+2:  2 2 12 18 
+3:  1 1 10 10 17 19 
+4:  9 9 9 9 20 
+
+Remove 5 False
+PrintBST
+0:  1 
+1:  4 16 
+2:  2 2 12 18 
+3:  1 1 10 10 17 19 
+4:  9 9 9 9 20 
+
+Remove 16 True
+PrintBST
+0:  1 
+1:  4 9 
+2:  2 2 12 18 
+3:  1 1 10 10 17 19 
+4:  9 9 20 
+
+Remove 15 False
+PrintBST
+0:  1 
+1:  4 9 
+2:  2 2 12 18 
+3:  1 1 10 10 17 19 
+4:  9 9 20 
+
+Remove 14 False
+PrintBST
+0:  1 
+1:  4 9 
+2:  2 2 12 18 
+3:  1 1 10 10 17 19 
+4:  9 9 20 
+
+Remove 13 False
+PrintBST
+0:  1 
+1:  4 9 
+2:  2 2 12 18 
+3:  1 1 10 10 17 19 
+4:  9 9 20 
+
+Remove 12 False
+PrintBST
+0:  1 
+1:  4 9 
+2:  2 2 12 18 
+3:  1 1 10 10 17 19 
+4:  9 9 20 
+
+Remove 11 False
+PrintBST
+0:  1 
+1:  4 9 
+2:  2 2 12 18 
+3:  1 1 10 10 17 19 
+4:  9 9 20 
+
+Remove 10 False
+PrintBST
+0:  1 
+1:  4 9 
+2:  2 2 12 18 
+3:  1 1 10 10 17 19 
+4:  9 9 20 
+
+Remove 9 True
+PrintBST
+0:  1 
+1:  4 9 
+2:  2 2 12 18 
+3:  1 1 10 10 17 19 
+4:  9 9 20 
+
+Remove 4 False
+PrintBST
+0:  1 
+1:  4 9 
+2:  2 2 12 18 
+3:  1 1 10 10 17 19 
+4:  9 9 20 
+
+Remove 3 False
+PrintBST
+0:  1 
+1:  4 9 
+2:  2 2 12 18 
+3:  1 1 10 10 17 19 
+4:  9 9 20 
+
+Remove 18 True
+PrintBST
+0:  1 
+1:  4 9 
+2:  2 2 12 17 
+3:  1 1 10 10 19 
+4:  9 9 20 
+
+Remove 17 True
+PrintBST
+0:  1 
+1:  4 9 
+2:  2 2 12 19 
+3:  1 1 10 10 20 
+4:  9 9 
+
+Remove 2 False
+PrintBST
+0:  1 
+1:  4 9 
+2:  2 2 12 19 
+3:  1 1 10 10 20 
+4:  9 9 
+
+Remove 19 True
+PrintBST
+0:  1 
+1:  4 9 
+2:  2 2 12 20 
+3:  1 1 10 10 
+4:  9 9 
+
+Remove 1 True
+PrintBST
+0:  1 
+1:  4 9 
+2:  2 2 12 20 
+3:  1 1 10 10 
+4:  9 9 
+
+Remove 20 True
+PrintBST
+0:  1 
+1:  4 9 
+2:  2 2 12 
+3:  1 1 10 10 
+4:  9 9 
+
+Clear
+PrintBST
+BST is empty
+
