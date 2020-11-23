@@ -1,7 +1,4 @@
 	#include "AVL.h"
-    //Please note that the class that implements this interface must be made
-	//of objects which implement the NodeInterface
-
 	/*
 	* Returns the root node for this tree
 	*
@@ -26,21 +23,13 @@
 
         if(parentNode == NULL){
             parentNode = new Node(data);
-            //rebalance(rootNode);
-            //heightCounter = 0;
+
             return true;
         }
         else if(parentNode->data > data){
             if(addHelper(data, parentNode->leftChild)){
-                //parentNode->balance--;
-                //if (!isBalanced(parentNode)){
-                //    parentNode->height++;
-                //}
-                //if(parentNode->balance < -1){
-                //    rebalance(parentNode);
-                //}
+ 
                 rebalance(parentNode);
-                //heightCounter++;
                 return true;
             }
             else{
@@ -49,12 +38,8 @@
         }
         else if(parentNode->data < data){
             if(addHelper(data, parentNode->rightChild)){
-                //parentNode->balance++;
                 rebalance(parentNode);
-                //if(parentNode->balance > 1){
-                //    rebalance(parentNode);
-                //}
-                //heightCounter++;
+
                 return true;
             }
             else{
@@ -74,6 +59,11 @@
 	* @return false if remove is unsuccessful(i.e. the int is not in the tree)
 	*/
 	bool AVL::remove(int data){
+        if(removeHelper(rootNode, data)){
+            rebalance(rootNode);
+            return true;
+        }
+        return false;
         return removeHelper(rootNode, data);
     }
     bool AVL::removeHelper(Node*& local_root,int data){
@@ -100,21 +90,28 @@
                 Node* old_root = local_root;
                 if(local_root->getLeftChild() == NULL){
                     local_root = local_root->getRightChild();
+                    
                     delete old_root;
+                    rebalance(local_root);
                 }
                 else if(local_root->getRightChild() == NULL){
                     local_root = local_root->getLeftChild();
+                    //rebalance(local_root->leftChild);
                     delete old_root;
+                    rebalance(local_root);
                 }
                 else{
                     //replace(old_root, local_root->leftChild);
                     Node *ptr = local_root->leftChild;
                     while (ptr->rightChild != NULL) {						
-                        ptr = ptr->rightChild;					
-                        }					
+                        ptr = ptr->rightChild;		
+                        //rebalance(ptr);			
+                        }
+                    rebalance(ptr);					
                     local_root->data = ptr->getData();					
                     removeHelper(local_root->leftChild, local_root->data);
                 }
+                //rebalance(rootNode);
                 return true;
             }
         }
@@ -134,38 +131,21 @@
             delete node;
         }
     }
-    //bool AVL::isBalanced(Node* node){
-    //    return node->balance == 0;
-    //}
 
     void AVL::rebalance(Node*& node){
-        int left_balance;
-        int right_balance;
-        int root_balance = node->getBalance();
-        if(node->leftChild != NULL){
-            left_balance = node->leftChild->getBalance();
+        if (node == NULL){
+		return;
         }
-        if(node->rightChild != NULL){
-            right_balance = node->rightChild->getBalance();
+	    if (node->getBalance() > 1){
+		    rebalanceLeft(node);
         }
-        //Left-Left
-        if(root_balance == -2 && left_balance == -1){
-            rotateRight(node);
+	    else if (node->getBalance() < -1){
+		    rebalanceRight(node);
         }
-        //Left-Right
-        else if(root_balance == -2 && left_balance == 1){
-            rotateLeft(node->leftChild);
-            rotateRight(node);
-        }
-        //Right-Right
-        else if(root_balance == 2 && right_balance == 1){
-            rotateLeft(node);
-        }
-        //Right-Left
-        else if(root_balance == 2 && right_balance == -1){
-            rotateRight(node->rightChild);
-            rotateLeft(node);
-        }
+
+		rebalance(node->leftChild);
+		rebalance(node->rightChild);
+        
     }
     void AVL::rotateRight(Node*& node){
         Node* temp = node->leftChild;
@@ -181,3 +161,27 @@
 	    node = temp;
         
     }
+    void AVL::rebalanceRight(Node*& n) //right-right and right-left
+{
+	if (n == NULL)
+		return;
+
+		//cout << "balanceRight" << endl;
+		if (n->leftChild->getBalance() >= 1)
+		{
+			rotateLeft(n->leftChild);
+		}
+		rotateRight(n);
+}
+
+void AVL::rebalanceLeft(Node*& n) //left-left and left-right
+{
+	if (n == NULL)
+		return;
+	//cout << "balanceLeft" << endl;
+		if (n->rightChild->getBalance() <= -1)
+		{
+			rotateRight(n->rightChild);
+		}
+		rotateLeft(n);
+}

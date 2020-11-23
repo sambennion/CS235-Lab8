@@ -56,4 +56,6 @@ public:
     void rebalance(Node*& node);
     void rotateRight(Node*& node);
     void rotateLeft(Node*& node);
+	void rebalanceRight(Node*& n);
+	void rebalanceLeft(Node*& n);
 };
